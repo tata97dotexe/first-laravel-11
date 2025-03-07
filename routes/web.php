@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 Route::get('/', function () {
     return view('welcome');
@@ -43,6 +44,21 @@ Route::get('/blog', function () {
 });
 
 // 3. route parameter
-Route::get('/blog/1', function () {
-    return 'ini adalah blog 1';
+// Route::get('/blog/1', function () {
+//     return 'ini adalah blog 1';
+// });
+
+// opsi 2 route parameter panggil digunakan parameter variabel halaman momor 'ID' untuk halamman nomor urutan otomatis
+// Route::get('/blog/{id}', function () {
+//     return 'ini adalah blog 1';
+// });
+
+// opsi 3 route parameter panggil digunakan parameter variabel halaman nomor 'ID' dengan kembali fungsi kode urutan nomor otomatis
+// Route::get('/blog/{id}', function ($id) {
+//     return 'ini adalah blog '.$id;
+// });
+
+// opsi 4 route parameter panggil digunakan parameter variabel halaman 'ID' dam 'Title'
+Route::get('/blog/{id}/{title}', function ($id) {
+    return 'ini adalah blog '.$id;
 });
