@@ -33,4 +33,11 @@ Route::get('/', function () {
 // });
 
 // opsi 4 view routes panggil digunakan variabel view dan nama-nama (misalkan data atau bebas nama variabel akan dipanggil untuk menampilkan post view blog.blade.php) tanpa 'get'
-Route::view('blog', 'blog', ['data' => 'saya programmer pemula']);
+// Route::view('blog', 'blog', ['data' => 'saya programmer pemula']);
+
+// opsi 5 view routes panggil digunakan ambil data dari database
+Route::get('/blog', function () {
+    // ambil data dari database
+    $profile = 'aku programmer noob';
+    return view('blog', ['data' => $profile]);
+});
