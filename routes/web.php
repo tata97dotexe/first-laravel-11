@@ -41,3 +41,8 @@ Route::get('/blog', function () {
     $profile = 'aku programmer noob';
     return view('blog', ['data' => $profile]);
 });
+
+// 3. route parameter
+Route::get('/blog/1', function () {
+    return 'ini adalah blog 1';
+});
