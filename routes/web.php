@@ -58,7 +58,14 @@ Route::get('/blog', function () {
 //     return 'ini adalah blog '.$id;
 // });
 
-// opsi 4 route parameter panggil digunakan parameter variabel halaman 'ID' dam 'Title'
+// opsi 4 route parameter panggil digunakan parameter variabel halaman 'ID' dan 'Title'
 Route::get('/blog/{id}/{title}', function ($id) {
     return 'ini adalah blog '.$id;
+});
+
+// opsi 5 route parameter panggil digunakan parameter variabel halaman 'ID atau Title' dengan http request
+Route::get('/blog/{id}', function (Request $request) {
+    // $name = $request -> name;
+    // $password = $request -> password;
+    return 'ini adalah blog '.$request->id;
 });
