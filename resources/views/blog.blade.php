@@ -8,5 +8,6 @@
 </head>
 <body>
     <h1>ini adalah halaman blog {{ $data }}</h1>
+    {{-- <h1>ini adalah halaman blog</h1> --}}
 </body>
 </html>

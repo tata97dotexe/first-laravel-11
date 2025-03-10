@@ -1,7 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+
+//memanggil import controller dengan variabel BlogController
+use App\Http\Controllers\BlogController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -72,13 +75,26 @@ Route::get('/', function () {
 
 // 4. named routes
 // opsi 5 view routes panggil digunakan ambil data dari database
-Route::get('/blog', function () {
-    // ambil data dari database
-    $profile = 'aku programmer noob';
-    return view('blog', ['data' => $profile]);
-})->name('blog');
+// Route::get('/blog', function () {
+//     // ambil data dari database
+//     $profile = 'aku programmer noob';
+//     return view('blog', ['data' => $profile]);
+// })->name('blog');
+
+// Route::get('/blog/{id}', function (Request $request) {
+//     // anggap aja melakukan update data & berhasil
+//     return redirect()->route(('blog'));
+//     // return 'ini adalah blog '.$request->id;
+// });
+
+// 5. mendaftarkan php ke environment komputer
+
+
+// 6. route controller
+Route::get('/blog', [BlogController::class, 'index']);
 
 Route::get('/blog/{id}', function (Request $request) {
     // anggap aja melakukan update data & berhasil
     return redirect()->route(('blog'));
+    // return 'ini adalah blog '.$request->id;
 });
