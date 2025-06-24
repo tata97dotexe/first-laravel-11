@@ -13,11 +13,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        $this->call([
+            UserSeeder::class,
+            BlogSeeder::class
+            // opsi alternatif buat folder kelas:
+            // jika mau buat folder untuk dipanggil kelas "BlogSeeder::class",
+            // maka wajib klik mouse kanan lalu muncul import class untuk memanggil folder variabel kelas "BlogSeeder::class"
         ]);
     }
 }
