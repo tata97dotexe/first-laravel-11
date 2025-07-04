@@ -10,6 +10,13 @@
     {{-- <h1>ini adalah halaman blog {{ $blogs }}</h1> --}}
     {{-- <h1>ini adalah halaman blog</h1> --}}
     <h1>Blog List</h1>
-    {{ $blogs }}
+    <ol>
+        @foreach ($blogs as $blog)
+            <li>
+                {{-- memanggil variabel $blog terdapat perintah kunci "judul/title" dari table blogs dalam SQL --}}
+                {{ $blog->title }}
+            </li>
+        @endforeach
+    </ol>
 </body>
 </html>

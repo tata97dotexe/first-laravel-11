@@ -30,7 +30,7 @@ class BlogController extends Controller
         $blogs =  DB::table('blogs')->get();
         // return $blogs;
         return view('blog', ['blogs' => $blogs]);
-        // memanggil data table blogs dengan variabel $blogs dan metode dd (Dependency Injection)
+        // memanggil data table blogs dengan variabel $blogs dan metode dd (Dump & Die) untuk menampilkan data table blogs
         // dd($blogs);
     }
 }
