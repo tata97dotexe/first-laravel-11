@@ -91,10 +91,12 @@ Route::get('/', function () {
 
 
 // 6. route controller
-Route::get('/blog', [BlogController::class, 'index']);
+// Route::get('/blog', [BlogController::class, 'index']);
 
-Route::get('/blog/{id}', function (Request $request) {
-    // anggap aja melakukan update data & berhasil
-    return redirect()->route(('blog'));
-    // return 'ini adalah blog '.$request->id;
-});
+// Route::get('/blog/{id}', function (Request $request) {
+//     // anggap aja melakukan update data & berhasil
+//     // return redirect()->route(('blog'));
+//     return 'ini adalah blog '.$request->id;
+// });
+
+Route::get('/blog', [BlogController::class, 'index']);

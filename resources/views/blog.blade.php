@@ -7,7 +7,9 @@
     <title>Blog Page</title>
 </head>
 <body>
-    <h1>ini adalah halaman blog {{ $data }}</h1>
+    {{-- <h1>ini adalah halaman blog {{ $blogs }}</h1> --}}
     {{-- <h1>ini adalah halaman blog</h1> --}}
+    <h1>Blog List</h1>
+    {{ $blogs }}
 </body>
 </html>
