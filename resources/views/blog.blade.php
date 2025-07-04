@@ -25,7 +25,7 @@
                     <tbody class="table-group-divider">
                         @foreach ($blogs as $blog)
                             <tr>
-                                <td>{{ $loop->iteration }}</td>
+                                <td>{{ ($blogs->currentpage()-1) * $blogs->perpage() + $loop->index + 1 }}</td>
                                 <td>{{ $blog->title }}</td>
                                 <td>Edit | Delete</td>
                             </tr>
@@ -33,6 +33,8 @@
                     </tbody>
                 </table>
             </div>
+
+            {{ $blogs->links() }}
 
             {{-- <ol>
                 @foreach ($blogs as $blog)

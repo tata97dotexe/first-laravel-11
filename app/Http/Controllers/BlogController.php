@@ -27,7 +27,7 @@ class BlogController extends Controller
     // tampilan database data table blogs dari sql/HeidiSQL
     function index() {
         // memanggil data table blogs dengan variabel $blogs dan metode get untuk menampilkan data table blogs
-        $blogs =  DB::table('blogs')->get();
+        $blogs =  DB::table('blogs')->simplePaginate(10);
         // return $blogs;
         return view('blog', ['blogs' => $blogs]);
         // memanggil data table blogs dengan variabel $blogs dan metode dd (Dump & Die) untuk menampilkan data table blogs
